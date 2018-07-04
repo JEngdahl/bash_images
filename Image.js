@@ -24,13 +24,14 @@ class Image {
 
   render() {
     const black = new Color(0);
-    this.matrix.forEach(row => {
-      let string = " ";
+    return this.matrix.reduce((str, row) => {
+      let line = ""
       row.forEach(color => {
-        string += color.bashSequence() + " ";
+        line += color.bashSequence() + " ";
       });
-      console.log(string, black.bashSequence());
-    });
+      line += black.bashSequence();
+      return str + "\n" + line;
+    }, "");
   }
 
 }

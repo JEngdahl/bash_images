@@ -15,4 +15,4 @@ for (let i = 0; i < rows; i++) {
 const image = new Image({
   matrix: matrix
 });
-image.render();
+console.log(image.render())
